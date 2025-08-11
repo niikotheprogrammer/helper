@@ -6,50 +6,95 @@
 <title>helper.</title>
   
   <h1 class="main-text">helper.</h1>
-
+ 
   
+  <div class="maerre">
   <h1 class="secondmaintext" style="text-aling: center">AI but for <span class="spaneveryone">everyone.</span></h1>
-  
-  </head>
+  </div>
+
+</head>
   <body>
       <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Mozilla+Text:wght@200..700&display=swap" rel="stylesheet">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
+ <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Mozilla+Text:wght@200&display=swap" rel="stylesheet">
     
 
 }
 
+<a href="https://www.lacoste.in/kids/clothing/polo-shirts.html" style="text-decoration: none">
+      <button class="donation">donate now :)</button>
+    </a>
+    
+    <a href="index.html">
+      <button class="butone" style="margin-left: 40px">test now <span class="spanarrow">&#8605<span></button>
+    </a>
   </body>
 
 <style> 
+
+  .maerre{
+ font-size: 1px
+}
+  
+  /* Animations */
+@keyframes fadeSlideDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeSlideUp {
+
+to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+}
   
   
   .spaneveryone{
  font-family: 'Mozilla Text', sans-serif;
 font-weight: 200;
 }
+
+  .donation{
+  background-color: black;
+  border: 1px solid white;
+  padding: 10px 20px;
+  font-family: 'Mozilla Text', sans-serif;
+   text-decoration: none;
+    border-radius: 25px;
+   color: white;
+    margin-left: 50px;
   
-  
-  
-  
-  
-  
- 
-  
-  .main-text{
+} 
+  .butone{
+  background-color: white;
+   text-decoration: none;
+    border-radius: 25px;
+    color: black;
+    padding: 10px 20px ;
+    font-family: 'Mozilla Text', sans-serif;
+}
+
+.main-text{
   font-family:'Mozilla Text' , sans-serif;
   color: white;
    font-size: 20px;  /* closer to your screenshot size */
     line-height: 1.2;
-  
+ 
   
    
 }
-  
+
   .secondmaintext{
   font-family:'Mozilla Text' , sans-serif;
   color: white;
@@ -59,12 +104,17 @@ font-weight: 200;
   width: 100%;
   text-align: center;
   font-size: 70px;
-   
-    
+
+
+     opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlideUp 1.2s ease-out forwards;
+  animation-delay: 0.5s;
+  transition: transform 0.4s ease, color 0.4s ease 
    
 }
-  
-  body{
+
+body{
   background-color: black
     
 }
@@ -76,3 +126,4 @@ font-weight: 200;
 
 
 </html>
+
