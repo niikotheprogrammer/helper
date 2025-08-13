@@ -68,12 +68,13 @@
   
  }
  .mini-card {
-  transition: transform 0.6s ease, filter 0.6s ease;
+ opacity: 0;
+  transition: opacity 1s ease;
 }
-.mini-card.blurred {
-  transform: translateY(20px);
-  filter: blur(4px);
+.minicard.visible {
+  opacity: 1;
 }
+
  /* Glow animation */
 @keyframes gradientGlow {
   0% {
@@ -228,6 +229,18 @@ body{
 
   </style>
 
+        
+<script>
+document.addEventListener('scroll', function() {
+  const minicard = document.querySelector('.minicard');
+  const scrollPosition = window.scrollY + window.innerHeight;
+  const pageHeight = document.documentElement.scrollHeight;
+
+  if (scrollPosition >= pageHeight - 50) {
+    minicard.classList.add('visible');
+  }
+});
+</script>
 
 
 
