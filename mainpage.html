@@ -1,3 +1,7 @@
+Could you just please like, send me the full code, but don't change the things, like the font, just make them stay the same, just add the discard effect in this HTML.
+
+
+
 <!DOCTYPE html>
 <html lang="en">
  <meta charset="UTF-8" />
@@ -56,6 +60,64 @@
 
 <style> 
  
+   .mini-card{
+    background: linear-gradient(200deg, rgba(73, 26, 214, 1) 0%, rgba(101, 191, 163, 1) 100%);
+    border-radius: 16px;
+    padding: 20px;
+    max-width: 360px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+    margin: 100px auto 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+    animation: gradientGlow 3s ease-in-out infinite;
+  }
+
+  .mini-card.visible{
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .mini-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+    background-size: cover;
+    opacity: 0.70;
+    pointer-events: none;
+  }
+
+  .mini-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 10px;
+    font-family: 'Mozilla Headline', sans-serif;
+  }
+
+  .mini-desc {
+    font-size: 0.95rem;
+    color: white;
+    line-height: 1.5;
+    font-family: 'Mozilla', sans-serif;
+  }
+
+  .slayy{
+    background-color: white;
+    padding: 10px 25px;
+    margin-left: 10px;
+    border-radius: 25px;
+    font-family: 'Mozilla Text', sans-serif;
+    text-decoration: none;
+  }
+
+  @keyframes fadeSlideUp{
+    to {
+      opacity: 1;
+      transform: translateY(0);
 
  /* Glow animation */
 @keyframes gradientGlow {
@@ -124,59 +186,6 @@ font-weight: 200;
   
 } 
 
-   .mini-card{
-    background: linear-gradient(200deg, rgba(73, 26, 214, 1) 0%, rgba(101, 191, 163, 1) 100%);
-    border-radius: 16px;
-    padding: 20px;
-    max-width: 360px;
-    position: relative;
-    overflow: hidden;
-    border: 1px solid #e5e7eb;
-    margin: 100px auto 0;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 1s ease, transform 1s ease;
-    animation: gradientGlow 3s ease-in-out infinite;
-  }
-
-  .mini-card.visible{
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .mini-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: url("https://grainy-gradients.vercel.app/noise.svg");
-    background-size: cover;
-    opacity: 0.70;
-    pointer-events: none;
-  }
-
-  .mini-title {
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: white;
-    margin-bottom: 10px;
-    font-family: 'Mozilla Headline', sans-serif;
-  }
-
-  .mini-desc {
-    font-size: 0.95rem;
-    color: white;
-    line-height: 1.5;
-    font-family: 'Mozilla', sans-serif;
-  }
-
-  .slayy{
-    background-color: white;
-    padding: 10px 25px;
-    margin-left: 10px;
-    border-radius: 25px;
-    font-family: 'Mozilla Text', sans-serif;
-
-
 
   .butone{
   background-color: white;
@@ -244,7 +253,6 @@ body{
 
 </script>
  </html>
-
 
 
 
