@@ -55,22 +55,7 @@
        
 
 <style> 
-  .slayy{
-  background-color: white;
-  padding: 10px 25px;
-  margin-left: 10px;
-  border-radius: 25px;
-  font-family: 'Mozilla Text', sans-serif;
-  text-decoration: none;
-  
-   
-  
- }
  
-}
-.mini-card.visible {
-  opacity: 1;
-}
 
  /* Glow animation */
 @keyframes gradientGlow {
@@ -91,19 +76,7 @@
   }
 }
 
-.mini-card {
-  background: linear-gradient(200deg, rgba(73, 26, 214, 1) 0%, rgba(101, 191, 163, 1) 100%);
-  border-radius: 16px;
-  padding: 20px;
-  max-width: 360px;
-  position: relative;
-  overflow: hidden;
-  border: 1px solid #e5e7eb;
- opacity: 0;
-  transition: opacity 1s ease;
- animation: gradientGlow 3s ease-in-out infinite;
- margin: 100px auto 0;
-}
+
 
   .maerre{
  font-size: 1px
@@ -151,30 +124,60 @@ font-weight: 200;
   
 } 
 
- .mini-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
-  background-size: cover;
-  opacity: 0.70;
-  pointer-events: none;
-}
+   .mini-card{
+    background: linear-gradient(200deg, rgba(73, 26, 214, 1) 0%, rgba(101, 191, 163, 1) 100%);
+    border-radius: 16px;
+    padding: 20px;
+    max-width: 360px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+    margin: 100px auto 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+    animation: gradientGlow 3s ease-in-out infinite;
+  }
 
-.mini-title {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: white;
-  margin-bottom: 10px;
-  font-family: 'Mozilla Headline', sans-serif;
-}
+  .mini-card.visible{
+    opacity: 1;
+    transform: translateY(0);
+  }
 
-.mini-desc {
-  font-size: 0.95rem;
-  color: white;
-  line-height: 1.5;
- font-family: 'Mozilla', sans-serif;
-}
+  .mini-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+    background-size: cover;
+    opacity: 0.70;
+    pointer-events: none;
+  }
+
+  .mini-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 10px;
+    font-family: 'Mozilla Headline', sans-serif;
+  }
+
+  .mini-desc {
+    font-size: 0.95rem;
+    color: white;
+    line-height: 1.5;
+    font-family: 'Mozilla', sans-serif;
+  }
+
+  .slayy{
+    background-color: white;
+    padding: 10px 25px;
+    margin-left: 10px;
+    border-radius: 25px;
+    font-family: 'Mozilla Text', sans-serif;
+
+
+
   .butone{
   background-color: white;
    text-decoration: none;
