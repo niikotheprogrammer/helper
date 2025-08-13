@@ -230,15 +230,15 @@ body{
 
         
 <script>
-document.addEventListener('scroll', function() {
+ document.addEventListener('scroll', function() {
   const minicard = document.querySelector('.mini-card');
-  const scrollPosition = window.scrollY + window.innerHeight;
-  const pageHeight = document.documentElement.scrollHeight;
+  if (!minicard) return;
 
-  if (scrollPosition >= pageHeight - 50) {
+  if (window.scrollY > 200) { // 200px down from the top
     minicard.classList.add('visible');
   }
 });
+
 </script>
 
 
