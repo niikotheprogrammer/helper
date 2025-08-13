@@ -1,259 +1,215 @@
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
- <meta charset="UTF-8" />
+<head>
+<meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>helper.</title>
-  
-  <h1 class="main-text">helper.</h1>
- 
-  
-  <div class="maerre">
-  <h1 class="secondmaintext" style="text-aling: center">AI but for <span class="spaneveryone">everyone.</span></h1>
-  </div>
 
-</head>
-  <body>
-      <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Mozilla+Text:wght@200..700&display=swap" rel="stylesheet">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-
- <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Mozilla+Text:wght@200&display=swap" rel="stylesheet">
-   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Mozilla+Text:wght@200..700&family=Mozilla+Headline:wght@200..700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Mozilla+Headline:wght@200..700&family=Mozilla+Text:wght@200&display=swap" rel="stylesheet">
-    
-
+<style>
+body{
+  background-color: black;
+  height: 2000px; /* for scrolling */
+  margin: 0;
+  text-align: center; /* center everything horizontally by default */
 }
 
-<a href="buymeacoffee.com/helperai">
-      <button class="donation">donate now :)</button>
-    </a>
-    
-    <a href="index.html">
-      <button class="butone" style="margin-left: 40px">test now <span class="spanarrow">&#8605<span></button>
-    </a>
-
-       <div class="mini-card">
-  <div class="mini-title">Basic Mini</div>
-  <div class="mini-desc">
-    Basic Mini is our simplified AI experience, designed for everyday tasks.  
-    It’s fast, lightweight, and completely free for all users — perfect for quick answers, simple writing, and casual conversations.  
-    While it may not have the full power of advanced models, it’s always here, ready to help you anytime without limits.
-   <a href="index.html">
-   <button class="slayy" >test now.</button>
-   </a>
-  </div>
-</div>
-
-   
-       
-
-       
-
-<style> 
- 
-   .mini-card{
-    background: linear-gradient(200deg, rgba(73, 26, 214, 1) 0%, rgba(101, 191, 163, 1) 100%);
-    border-radius: 16px;
-    padding: 20px;
-    max-width: 360px;
-    position: relative;
-    overflow: hidden;
-    border: 1px solid #e5e7eb;
-    margin: 100px auto 0;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 1s ease, transform 1s ease;
-    animation: gradientGlow 3s ease-in-out infinite;
-  }
-
-  .mini-card.visible{
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .mini-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: url("https://grainy-gradients.vercel.app/noise.svg");
-    background-size: cover;
-    opacity: 0.70;
-    pointer-events: none;
-  }
-
-  .mini-title {
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: white;
-    margin-bottom: 10px;
-    font-family: 'Mozilla Headline', sans-serif;
-  }
-
-  .mini-desc {
-    font-size: 0.95rem;
-    color: white;
-    line-height: 1.5;
-    font-family: 'Mozilla', sans-serif;
-  }
-
-  .slayy{
-    background-color: white;
-    padding: 10px 25px;
-    margin-left: 10px;
-    border-radius: 25px;
-    font-family: 'Mozilla Text', sans-serif;
-    text-decoration: none;
-  }
-
-  @keyframes fadeSlideUp{
-    to {
-      opacity: 1;
-      transform: translateY(0);
-
- /* Glow animation */
-@keyframes gradientGlow {
-  0% {
-    box-shadow: 0 0 10px rgba(73, 26, 214, 0.6),
-                0 0 20px rgba(101, 191, 163, 0.6),
-                0 0 30px rgba(73, 26, 214, 0.4);
-  }
-  50% {
-    box-shadow: 0 0 20px rgba(101, 191, 163, 0.8),
-                0 0 40px rgba(73, 26, 214, 0.8),
-                0 0 60px rgba(101, 191, 163, 0.6);
-  }
-  100% {
-    box-shadow: 0 0 10px rgba(73, 26, 214, 0.6),
-                0 0 20px rgba(101, 191, 163, 0.6),
-                0 0 30px rgba(73, 26, 214, 0.4);
-  }
+.main-text{
+  font-family:'Mozilla Text', sans-serif;
+  color: white;
+  font-size: 20px;
+  line-height: 1.2;
 }
 
-
-
-  .maerre{
- font-size: 1px
+.secondmaintext{
+  font-family:'Mozilla Text', sans-serif;
+  color: white;
+  font-weight: 300;
+  margin: 0;
+  padding-top:5rem;
+  font-size: 70px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlideUp 1.2s ease-out forwards;
+  animation-delay: 0.5s;
+  transition: transform 0.4s ease, color 0.4s ease;
 }
-  
-  /* Animations */
-@keyframes fadeSlideDown {
+
+.spaneveryone{
+  font-family: 'Mozilla Headline', sans-serif; /* fixed to Headline */
+  font-weight: 200;
+}
+
+.donation, .butone{
+  display: inline-block;
+  margin: 20px auto; /* centered horizontally with margin */
+}
+
+.donation{
+  background-color: black;
+  border: 1px solid white;
+  padding: 10px 20px;
+  font-family: 'Mozilla Text', sans-serif;
+  text-decoration: none;
+  border-radius: 25px;
+  color: white;
+  opacity:0;
+  transform: translateY(20px);
+  animation: fadeSlideUp 1.2s ease-out forwards;
+  animation-delay: 0.5s;
+  transition: transform 0.4s ease, color 0.4s ease;
+}
+
+.butone{
+  background-color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  color: black;
+  padding: 10px 20px;
+  font-family: 'Mozilla Text', sans-serif;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlideUp 1.2s ease-out forwards;
+  animation-delay: 0.7s;
+  transition: transform 0.4s ease, color 0.4s ease;
+}
+
+.mini-card{
+  background: linear-gradient(200deg, rgba(73, 26, 214, 1) 0%, rgba(101, 191, 163, 1) 100%);
+  border-radius: 16px;
+  padding: 20px;
+  max-width: 360px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  margin: 100px auto 0;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+  animation: gradientGlow 3s ease-in-out infinite;
+}
+
+.mini-card.visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mini-card::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  background-size: cover;
+  opacity: 0.70;
+  pointer-events: none;
+}
+
+.mini-title{
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 10px;
+  font-family: 'Mozilla Headline', sans-serif;
+}
+
+.mini-desc{
+  font-size: 0.95rem;
+  color: white;
+  line-height: 1.5;
+  font-family: 'Mozilla', sans-serif;
+}
+
+.slayy{
+  background-color: white;
+  padding: 10px 25px;
+  margin-left: 10px;
+  border-radius: 25px;
+  font-family: 'Mozilla Text', sans-serif;
+  text-decoration: none;
+}
+
+@keyframes fadeSlideUp{
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-@keyframes fadeSlideUp {
-
-to {
-    opacity: 1;
-    transform: translateY(0);
+@keyframes gradientGlow{
+  0%{
+    box-shadow: 0 0 10px rgba(73, 26, 214, 0.6),
+                0 0 20px rgba(101, 191, 163, 0.6),
+                0 0 30px rgba(73, 26, 214, 0.4);
   }
-  
-}
-  
-  
-  .spaneveryone{
- font-family: 'Mozilla Text', sans-serif;
-font-weight: 200;
-}
-
-  .donation{
-  background-color: black;
-  border: 1px solid white;
-  padding: 10px 20px;
-  font-family: 'Mozilla Text', sans-serif;
-   text-decoration: none;
-    border-radius: 25px;
-   color: white;
-    margin-left: 50px;
-
-    opacity:0;
-   
-     transform: translateY(20px);
-  animation: fadeSlideUp 1.2s ease-out forwards;
-  animation-delay: 0.5s;
-  transition: transform 0.4s ease, color 0.4s ease 
-  
-} 
-
-
-  .butone{
-  background-color: white;
-   text-decoration: none;
-    border-radius: 25px;
-    color: black;
-    padding: 10px 20px ;
-    font-family: 'Mozilla Text', sans-serif;
-    opacity: 0;
-     transform: translateY(20px);
-  animation: fadeSlideUp 1.2s ease-out forwards;
-  animation-delay: 0.7s;
-  transition: transform 0.4s ease, color 0.4s ease 
+  50%{
+    box-shadow: 0 0 20px rgba(101, 191, 163, 0.8),
+                0 0 40px rgba(73, 26, 214, 0.8),
+                0 0 60px rgba(101, 191, 163, 0.6);
+  }
+  100%{
+    box-shadow: 0 0 10px rgba(73, 26, 214, 0.6),
+                0 0 20px rgba(101, 191, 163, 0.6),
+                0 0 30px rgba(73, 26, 214, 0.4);
+  }
 }
 
-.main-text{
-  font-family:'Mozilla Text' , sans-serif;
-  color: white;
-   font-size: 20px;  /* closer to your screenshot size */
-    line-height: 1.2;
- 
-  
-   
+.maerre{
+  font-size: 1px;
 }
+</style>
 
-  .secondmaintext{
-  font-family:'Mozilla Text' , sans-serif;
-  color: white;
-   font-weight: 300
-  margin: 0;
-  padding-top:5rem;
-  width: 100%;
-  text-align: center;
-  font-size: 70px;
+</head>
+<body>
 
+<h1 class="main-text">helper.</h1>
 
-     opacity: 0;
-  transform: translateY(20px);
-  animation: fadeSlideUp 1.2s ease-out forwards;
-  animation-delay: 0.5s;
-  transition: transform 0.4s ease, color 0.4s ease 
-   
-}
+<div class="maerre">
+  <h1 class="secondmaintext">AI but for <span class="spaneveryone">everyone.</span></h1>
+</div>
 
-body{
-  background-color: black;
- height: 2000px
-    
-}
-  
-  
+<a href="buymeacoffee.com/helperai">
+  <button class="donation">donate now :)</button>
+</a>
 
-  </style>
+<a href="index.html">
+  <button class="butone">test now <span class="spanarrow">&#8605;</span></button>
+</a>
 
-        
+<div class="mini-card">
+  <div class="mini-title">Basic Mini</div>
+  <div class="mini-desc">
+    Basic Mini is our simplified AI experience, designed for everyday tasks.  
+    It’s fast, lightweight, and completely free for all users — perfect for quick answers, simple writing, and casual conversations.  
+    While it may not have the full power of advanced models, it’s always here, ready to help you anytime without limits.
+    <a href="index.html">
+      <button class="slayy" >test now.</button>
+    </a>
+  </div>
+</div>
+
 <script>
- document.addEventListener('scroll', function() {
+document.addEventListener('DOMContentLoaded', function(){
   const minicard = document.querySelector('.mini-card');
-  if (!minicard) return;
+  if(!minicard) return;
 
-  if (window.scrollY > 200) { // 200px down from the top
-    minicard.classList.add('visible');
+  function showMiniCard(){
+    if(window.scrollY > 150){ // appear after scrolling 150px
+      minicard.classList.add('visible');
+    }
   }
+
+  window.addEventListener('scroll', showMiniCard);
+  showMiniCard(); // in case already scrolled
 });
-
 </script>
- </html>
 
+</body>
+</html>
 
 
 
