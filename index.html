@@ -84,11 +84,28 @@ background: linear-gradient(200deg, rgba(73, 26, 214, 1) 0%, rgba(101, 191, 163,
   line-height: 1.5;
 }
 
-  .mini-card.down {
-  transform: translateY(60px);
-  opacity: 0.95;
+  /* Smooth output reveal */
+#output {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.6s ease, opacity 0.6s ease;
+}
+#output.show {
+  max-height: 300px; /* adjust if you expect longer text */
+  opacity: 1;
 }
 
+/* Smooth mini-card shift + blur while thinking */
+.mini-card {
+  transition: transform 0.6s ease, filter 0.6s ease;
+}
+.mini-card.blurred {
+  transform: translateY(20px);
+  filter: blur(4px);
+}
+
+  
 </style>
 
 </style>
@@ -115,65 +132,72 @@ background: linear-gradient(200deg, rgba(73, 26, 214, 1) 0%, rgba(101, 191, 163,
   </div>
 </div>
 
-
 <script>
   const btn = document.getElementById("generate");
-const promptInput = document.getElementById("prompt");
-const output = document.getElementById("output");
-const promptBox = document.getElementById("prompt");
-const miniCard = document.querySelector(".mini-card");
+  const promptInput = document.getElementById("prompt");
+  const output = document.getElementById("output");
+  const miniCard = document.querySelector(".mini-card");
 
-promptBox.addEventListener("focus", () => {
-  miniCard.classList.add("down");
-});
-
-promptBox.addEventListener("blur", () => {
-  miniCard.classList.remove("down");
-});
-
-btn.addEventListener("click", async () => {
-  const prompt = promptInput.value.trim();
-  if (!prompt) {
-    alert("Please enter a prompt.");
-    return;
-  }
-
-  output.textContent = "making...";
-
-  try {
-    const response = await fetch("/generate", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ prompt }),
-    });
-
-    if (!response.ok) throw new Error("Owwnnn sorryyyyy but the network response was not okey, try again another time.");
-
-    const data = await response.json();
-
-    function typeWriter(text, element, delay = 30) {
-      element.textContent = "";
-      let i = 0;
-      function typing() {
-        if (i < text.length) {
-          element.textContent += text.charAt(i);
-          i++;
-          setTimeout(typing, delay);
-        }
-      }
-      typing();
+  btn.addEventListener("click", async () => {
+    const prompt = promptInput.value.trim();
+    if (!prompt) {
+      alert("Please enter a prompt.");
+      return;
     }
 
-    typeWriter(data.output, output);
+    // Show output smoothly + blur/shift the card
+    output.classList.add("show");
+    output.textContent = "making...";
+    if (miniCard) miniCard.classList.add("blurred");
 
-  } catch (err) {
-    output.textContent = "Error: " + err.message;
+    // Optional: button busy state
+    const originalBtnText = btn.textContent;
+    btn.textContent = "thinking…";
+    btn.disabled = true;
+
+    try {
+      const response = await fetch("/generate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ prompt }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Owwnnn sorryyyyy but the network response was not okey, try again another time.");
+      }
+
+      const data = await response.json();
+
+      // Typewriter effect
+      typeWriter(data.output ?? "", output, 30);
+
+    } catch (err) {
+      output.textContent = "Error: " + err.message;
+    } finally {
+      // Smoothly un-blur the card after the output starts showing
+      setTimeout(() => {
+        if (miniCard) miniCard.classList.remove("blurred");
+      }, 300);
+
+      btn.textContent = originalBtnText;
+      btn.disabled = false;
+    }
+  });
+
+  function typeWriter(text, element, delay = 30) {
+    element.textContent = "";
+    let i = 0;
+    (function typing() {
+      if (i < text.length) {
+        element.textContent += text.charAt(i++);
+        setTimeout(typing, delay);
+      }
+    })();
   }
-});
-
 </script>
 </body>
 </html>
+
 
 
 
