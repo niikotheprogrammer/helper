@@ -44,10 +44,50 @@ textarea, button {
 button {
   animation-delay: 0.2s;
 }
+    /* CSS */
+.mini-card {
+ background: #491ad6;
+background: linear-gradient(200deg, rgba(73, 26, 214, 1) 0%, rgba(101, 191, 163, 1) 100%);
+  border-radius: 16px;
+  padding: 20px;
+  max-width: 360px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0px 4px 20px rgba(0,0,0,0.04);
+}
+
+/* Grain effect inside the card */
+.mini-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  background-size: cover;
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+.mini-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.mini-desc {
+  font-size: 0.95rem;
+  color: white;
+  line-height: 1.5;
+}
+
+</style>
 
 </style>
 </head>
 <body>
+
+  
 
 <h1 class="maintext">helper.</h1>
 
@@ -56,6 +96,17 @@ button {
 <button id="generate">think..</button>
 
 <pre id="output"></pre>
+
+  <!-- HTML -->
+<div class="mini-card">
+  <div class="mini-title">Basic Mini</div>
+  <div class="mini-desc">
+    Basic Mini is our simplified AI experience, designed for everyday tasks.  
+    It’s fast, lightweight, and completely free for all users — perfect for quick answers, simple writing, and casual conversations.  
+    While it may not have the full power of advanced models, it’s always here, ready to help you anytime without limits.
+  </div>
+</div>
+
 
 <script>
   const btn = document.getElementById("generate");
@@ -105,6 +156,7 @@ btn.addEventListener("click", async () => {
 </script>
 </body>
 </html>
+
 
 
 
