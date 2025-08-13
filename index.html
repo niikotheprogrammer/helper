@@ -45,44 +45,7 @@ button {
   animation-delay: 0.2s;
 }
     /* CSS */
-.mini-card {
- background: #491ad6;
-background: linear-gradient(200deg, rgba(73, 26, 214, 1) 0%, rgba(101, 191, 163, 1) 100%);
-  border-radius: 16px;
-  padding: 20px;
-  max-width: 360px;
-  position: relative;
-  overflow: hidden;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0px 4px 20px rgba(0,0,0,0.04);
-  transform: translateY(20px);
-  animation: fadeSlideUp 3s ease-out forwards;
-}
 
-/* Grain effect inside the card */
-.mini-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
-  background-size: cover;
-  opacity: 0.40;
-  pointer-events: none;
-}
-
-.mini-title {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: white;
-  margin-bottom: 10px;
-  font-family: 'Mozilla Headline';
-}
-
-.mini-desc {
-  font-size: 0.95rem;
-  color: white;
-  line-height: 1.5;
-}
 
   /* Smooth output reveal */
 #output {
@@ -97,13 +60,7 @@ background: linear-gradient(200deg, rgba(73, 26, 214, 1) 0%, rgba(101, 191, 163,
 }
 
 /* Smooth mini-card shift + blur while thinking */
-.mini-card {
-  transition: transform 0.6s ease, filter 0.6s ease;
-}
-.mini-card.blurred {
-  transform: translateY(20px);
-  filter: blur(4px);
-}
+
 
   
 </style>
@@ -123,14 +80,7 @@ background: linear-gradient(200deg, rgba(73, 26, 214, 1) 0%, rgba(101, 191, 163,
 <pre id="output"></pre>
 
   <!-- HTML -->
-<div class="mini-card">
-  <div class="mini-title">Basic Mini</div>
-  <div class="mini-desc">
-    Basic Mini is our simplified AI experience, designed for everyday tasks.  
-    It’s fast, lightweight, and completely free for all users — perfect for quick answers, simple writing, and casual conversations.  
-    While it may not have the full power of advanced models, it’s always here, ready to help you anytime without limits.
-  </div>
-</div>
+
 
 <script>
   const btn = document.getElementById("generate");
@@ -197,6 +147,7 @@ background: linear-gradient(200deg, rgba(73, 26, 214, 1) 0%, rgba(101, 191, 163,
 </script>
 </body>
 </html>
+
 
 
 
