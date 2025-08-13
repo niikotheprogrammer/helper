@@ -23,6 +23,9 @@
  <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Mozilla+Text:wght@200&display=swap" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mozilla+Headline:wght@200..700&family=Mozilla+Text:wght@200&display=swap" rel="stylesheet">
     
 
 }
@@ -34,9 +37,52 @@
     <a href="index.html">
       <button class="butone" style="margin-left: 40px">test now <span class="spanarrow">&#8605<span></button>
     </a>
-  </body>
+
+       <div class="mini-card">
+  <div class="mini-title">Basic Mini</div>
+  <div class="mini-desc">
+    Basic Mini is our simplified AI experience, designed for everyday tasks.  
+    It’s fast, lightweight, and completely free for all users — perfect for quick answers, simple writing, and casual conversations.  
+    While it may not have the full power of advanced models, it’s always here, ready to help you anytime without limits.
+  </div>
+</div>
+
+   
+       
+
+       
 
 <style> 
+ /* Glow animation */
+@keyframes gradientGlow {
+  0% {
+    box-shadow: 0 0 10px rgba(73, 26, 214, 0.6),
+                0 0 20px rgba(101, 191, 163, 0.6),
+                0 0 30px rgba(73, 26, 214, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(101, 191, 163, 0.8),
+                0 0 40px rgba(73, 26, 214, 0.8),
+                0 0 60px rgba(101, 191, 163, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(73, 26, 214, 0.6),
+                0 0 20px rgba(101, 191, 163, 0.6),
+                0 0 30px rgba(73, 26, 214, 0.4);
+  }
+}
+
+.mini-card {
+  background: linear-gradient(200deg, rgba(73, 26, 214, 1) 0%, rgba(101, 191, 163, 1) 100%);
+  border-radius: 16px;
+  padding: 20px;
+  max-width: 360px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  transform: translateY(20px);
+  animation: fadeSlideUp 3s ease-out forwards, gradientGlow 3s ease-in-out infinite;
+}
 
   .maerre{
  font-size: 1px
@@ -83,6 +129,30 @@ font-weight: 200;
   transition: transform 0.4s ease, color 0.4s ease 
   
 } 
+
+ .mini-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  background-size: cover;
+  opacity: 0.40;
+  pointer-events: none;
+}
+
+.mini-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 10px;
+  font-family: 'Mozilla Headline';
+}
+
+.mini-desc {
+  font-size: 0.95rem;
+  color: white;
+  line-height: 1.5;
+}
   .butone{
   background-color: white;
    text-decoration: none;
@@ -137,5 +207,5 @@ body{
 
 
 
-</html>
+
 
