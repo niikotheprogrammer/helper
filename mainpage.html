@@ -67,9 +67,7 @@
    
   
  }
- .mini-card {
- opacity: 0;
-  transition: opacity 1s ease;
+ 
 }
 .minicard.visible {
   opacity: 1;
@@ -102,8 +100,9 @@
   position: relative;
   overflow: hidden;
   border: 1px solid #e5e7eb;
-  transform: translateY(20px);
-  animation: fadeSlideUp 6s ease-out forwards, gradientGlow 3s ease-in-out infinite;
+ opacity: 0;
+  transition: opacity 1s ease;
+ animation: gradientGlow 3s ease-in-out infinite;
  margin: 100px auto 0;
 }
 
@@ -232,7 +231,7 @@ body{
         
 <script>
 document.addEventListener('scroll', function() {
-  const minicard = document.querySelector('.minicard');
+  const minicard = document.querySelector('.mini-card');
   const scrollPosition = window.scrollY + window.innerHeight;
   const pageHeight = document.documentElement.scrollHeight;
 
