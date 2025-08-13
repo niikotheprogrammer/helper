@@ -84,6 +84,11 @@ background: linear-gradient(200deg, rgba(73, 26, 214, 1) 0%, rgba(101, 191, 163,
   line-height: 1.5;
 }
 
+  .mini-card.down {
+  transform: translateY(60px);
+  opacity: 0.95;
+}
+
 </style>
 
 </style>
@@ -115,6 +120,16 @@ background: linear-gradient(200deg, rgba(73, 26, 214, 1) 0%, rgba(101, 191, 163,
   const btn = document.getElementById("generate");
 const promptInput = document.getElementById("prompt");
 const output = document.getElementById("output");
+const promptBox = document.getElementById("prompt");
+const miniCard = document.querySelector(".mini-card");
+
+promptBox.addEventListener("focus", () => {
+  miniCard.classList.add("down");
+});
+
+promptBox.addEventListener("blur", () => {
+  miniCard.classList.remove("down");
+});
 
 btn.addEventListener("click", async () => {
   const prompt = promptInput.value.trim();
@@ -159,6 +174,7 @@ btn.addEventListener("click", async () => {
 </script>
 </body>
 </html>
+
 
 
 
