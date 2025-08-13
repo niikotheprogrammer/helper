@@ -66,7 +66,7 @@ background: linear-gradient(200deg, rgba(73, 26, 214, 1) 0%, rgba(101, 191, 163,
   inset: 0;
   background-image: url("https://grainy-gradients.vercel.app/noise.svg");
   background-size: cover;
-  opacity: 0.20;
+  opacity: 0.40;
   pointer-events: none;
 }
 
@@ -169,7 +169,7 @@ background: linear-gradient(200deg, rgba(73, 26, 214, 1) 0%, rgba(101, 191, 163,
       const data = await response.json();
 
       // Typewriter effect
-      typeWriter(data.output ?? "", output, 30);
+      typeWriter(data.output ?? "", output, 60);
 
     } catch (err) {
       output.textContent = "Error: " + err.message;
@@ -197,6 +197,7 @@ background: linear-gradient(200deg, rgba(73, 26, 214, 1) 0%, rgba(101, 191, 163,
 </script>
 </body>
 </html>
+
 
 
 
