@@ -11,6 +11,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Mozilla+Text:wght@200;400;700&family=Mozilla+Headline:wght@200;400;700&display=swap" rel="stylesheet">
 
 <style>
+  .spanarrow{
+
+    font-size: 10px
+  }
 body{
   background-color: black;
   margin: 0;
@@ -183,7 +187,7 @@ document.addEventListener('DOMContentLoaded', function(){
   if(!minicard) return;
 
   function showMiniCard(){
-    if(window.scrollY > 150){ // appear after scrolling 150px
+    if(window.scrollY > 100){ // appear after scrolling 150px
       minicard.classList.add('visible');
     }
   }
