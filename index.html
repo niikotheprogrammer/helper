@@ -119,7 +119,7 @@ button {
       const data = await response.json();
 
       // Typewriter effect
-      typeWriter(data.output ?? "", output, 60);
+      typeWriter(data.output ?? "", output, 80);
 
     } catch (err) {
       output.textContent = "Error: " + err.message;
@@ -147,6 +147,7 @@ button {
 </script>
 </body>
 </html>
+
 
 
 
