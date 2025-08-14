@@ -4,23 +4,24 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>helper.</title>
+
+<!-- Load fonts once correctly -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family">
+<link href="https://fonts.googleapis.com/css2?family=Mozilla+Text:wght@200;400;700&family=Mozilla+Headline:wght@200;400;700&display=swap" rel="stylesheet">
 
 <style>
 body{
   background-color: black;
-  height: 2000px; /* for scrolling */
   margin: 0;
-  text-align: center; /* center everything horizontally by default */
+  text-align: center;
+  height: 2000px; /* for scrolling */
 }
 
 .main-text{
   font-family:'Mozilla Text', sans-serif;
   color: white;
   font-size: 20px;
-  line-height: 1.2;
 }
 
 .secondmaintext{
@@ -30,22 +31,16 @@ body{
   margin: 0;
   padding-top:5rem;
   font-size: 70px;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeSlideUp 1.2s ease-out forwards;
-  animation-delay: 0.5s;
-  transition: transform 0.4s ease, color 0.4s ease;
 }
 
 .spaneveryone{
   font-family: 'Mozilla Headline', sans-serif;
   font-weight: 400;
-
 }
 
 .donation, .butone{
   display: inline-block;
-  margin: 20px auto; /* centered horizontally with margin */
+  margin: 20px auto;
 }
 
 .donation{
@@ -119,7 +114,7 @@ body{
   font-size: 0.95rem;
   color: white;
   line-height: 1.5;
-  font-family: 'Mozilla', sans-serif;
+  font-family: 'Mozilla Text', sans-serif;
 }
 
 .slayy{
@@ -155,22 +150,14 @@ body{
                 0 0 30px rgba(73, 26, 214, 0.4);
   }
 }
-
-.maerre{
-  font-size: 1px;
-}
 </style>
-
 </head>
 <body>
-  
+
 <h1 class="main-text">helper.</h1>
+<h1 class="secondmaintext">AI but for <span class="spaneveryone">everyone.</span></h1>
 
-<div class="maerre">
-  <h1 class="secondmaintext">AI but for <span class="spaneveryone">everyone.</span></h1>
-</div>
-
-<a href="buymeacoffee.com/helperai">
+<a href="https://buymeacoffee.com/helperai">
   <button class="donation">donate now :)</button>
 </a>
 
@@ -185,7 +172,7 @@ body{
     It’s fast, lightweight, and completely free for all users — perfect for quick answers, simple writing, and casual conversations.  
     While it may not have the full power of advanced models, it’s always here, ready to help you anytime without limits.
     <a href="index.html">
-      <button class="slayy" >test now.</button>
+      <button class="slayy">test now.</button>
     </a>
   </div>
 </div>
@@ -208,6 +195,3 @@ document.addEventListener('DOMContentLoaded', function(){
 
 </body>
 </html>
-
-
-
