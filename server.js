@@ -16,13 +16,14 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
-// Serve your frontend files from public folder
-app.use(express.static(path.join(__dirname, "public")));
+// Serve frontend files directly from root
+app.use(express.static(__dirname));
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
+// Text endpoint
 app.post("/generate", async (req, res) => {
   const { prompt } = req.body;
   try {
@@ -42,9 +43,9 @@ app.post("/generate", async (req, res) => {
   }
 });
 
-// Fallback to serve index.html on all other routes
+// Fallback to index.html for all other routes
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "index.html"));
+  res.sendFile(path.join(__dirname, "index.html"));
 });
 
 app.listen(PORT, () => {
